@@ -16,7 +16,6 @@ public class PlayerMovement : NetworkBehaviour
     {
         base.OnNetworkSpawn();
         if (!IsOwner) this.enabled = false;
-
     }
 
     // Update is called once per frame

@@ -10,6 +10,10 @@ public class PlayerSpawnManager : MonoBehaviour
     void Start()
     {
         NetworkManager.Singleton.OnClientConnectedCallback += SpawnPlayerPosition;
+        if (NetworkManager.Singleton.IsServer)
+        {
+            SpawnPlayerPosition(0);
+        }
     }
     private void SpawnPlayerPosition(ulong clientId)
     {
